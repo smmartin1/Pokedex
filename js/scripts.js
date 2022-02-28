@@ -2,41 +2,42 @@
 
 //Pokedex
 let pokemonRepository = (function () {
-  let pokemonList = [
-	{
-		name: 'Bulbasaur',
-		height: 28,
-		types: ['Grass', 'Poison']
-	},
-	{
-		name: 'Quagsire',
-		height: 55,
-		types: ['Water', 'Ground']
-	},
-	{
-		name: 'Latias',
-		height: 55,
-		types: ['Dragon', 'Psychic']
-	},
-	{
-		name: 'Bidoof',
-		height: 20,
-		types: ['Normal']
+	//Height is in inches
+	let pokemonList = [
+		{
+			name: 'Bulbasaur',
+			height: 28,
+			types: ['Grass', 'Poison']
+		},
+		{
+			name: 'Quagsire',
+			height: 55,
+			types: ['Water', 'Ground']
+		},
+		{
+			name: 'Latias',
+			height: 55,
+			types: ['Dragon', 'Psychic']
+		},
+		{
+			name: 'Bidoof',
+			height: 20,
+			types: ['Normal']
+		}
+		];
+
+	function add(pokemon) {
+		pokemonList.push(pokemon);
 	}
-	];
 
-  function add(pokemon) {
-    pokemonList.push(pokemon);
-  }
+	function getAll() {
+		return pokemonList;
+	}
 
-  function getAll() {
-    return pokemonList;
-  }
-
-  return {
-    add: add,
-    getAll: getAll
-  };
+	return {
+		add: add,
+		getAll: getAll
+	};
 })();
 
 pokemonRepository.getAll().forEach(function(pokemon) {
