@@ -1,3 +1,30 @@
 @charset "UTF-8";
 /* CSS Document */
 
+/*CSS is not finalized*/
+
+body {
+	background-color: #E9F5F7;
+	font-family: 'Arimo', sans-serif;
+}
+
+h1{text-decoration: underline;}
+
+button{
+	border: none;
+	font-family: inherit;
+	font-size: 20px;
+	background-color: #B5CDD2;
+	color: #111111;
+	text-decoration: none;
+	padding: 15px;
+	transition: 0.5s opacity;
+}
+
+button:hover, button:focus{
+	cursor: pointer;
+	opacity: 0.8;
+}
+
+ul{list-style-type: none;}
+li{margin: 15px 0;}
