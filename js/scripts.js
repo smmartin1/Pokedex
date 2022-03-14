@@ -17,7 +17,9 @@ let pokemonRepository = (function () {
 				let pokemon = {
 					name: item.name,
 					height: item.height,
+					weight: item.weight,
 					types: item.types,
+					ability: item.ability,
 					imageUrl: item.imageUrl,
 					detailsUrl: item.url
 				};
@@ -36,6 +38,8 @@ let pokemonRepository = (function () {
 			item.imageUrl = details.sprites.front_default;
 			item.height = details.height;
 			item.types = details.types;
+			item.ability = details.abilities;
+			item.weight = details.weight;
 		}).catch(function (e) {
 			console.error(e);
 		});
@@ -57,7 +61,7 @@ let pokemonRepository = (function () {
 		let pokemonList = $('.list-group');
 		let listItem = $('<li></li>');
 		listItem.addClass('group-list-item');
-		
+
 		let button = $('<button>' + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + '</button>');
 		button.attr('data-target', '#exampleModal');
 		button.attr('data-toggle', 'modal');
@@ -78,28 +82,33 @@ let pokemonRepository = (function () {
 	function showDetails(pokemon) {
 		loadDetails(pokemon).then(function () {
 			showModal(pokemon);
-			console.log(pokemon);
+			console.log(pokemon.types);
 		});
 	}
 
 	function showModal(pokemon) {
 		let modalTitle = $('.modal-title');
 		let modalBody = $('.modal-body');
-		
+
 		modalTitle.empty();
 		modalBody.empty();
-		
+
 		let name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-		let contentElement = $('<p>Height: ' + pokemon.height + '</p>');
-		contentElement.addClass('pokemon-info');
+		let pokemonHeight = $('<p>Height: ' + pokemon.height + '</p>');
+		pokemonHeight.addClass('pokemon-info');
+
+		let pokemonWeight = $('<p>Weight: ' + pokemon.weight + '</p>');
+		pokemonWeight.addClass('pokemon-info');
 
 		let pokemonImage = $('<img>');
 		pokemonImage.attr('src', pokemon.imageUrl);
+		pokemonImage.attr('alt', 'Image of Selected Pokemon');
 		pokemonImage.addClass('pokemon-image');
-		
+
 		modalTitle.append(name);
-		modalBody.append(contentElement);
+		modalBody.append(pokemonHeight);
+		modalBody.append(pokemonWeight);
 		modalBody.append(pokemonImage);
 	}
 
