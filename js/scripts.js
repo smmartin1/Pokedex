@@ -82,7 +82,6 @@ let pokemonRepository = (function () {
 	function showDetails(pokemon) {
 		loadDetails(pokemon).then(function () {
 			showModal(pokemon);
-			console.log(pokemon.types);
 		});
 	}
 
@@ -101,6 +100,9 @@ let pokemonRepository = (function () {
 		let pokemonWeight = $('<p>Weight: ' + pokemon.weight + '</p>');
 		pokemonWeight.addClass('pokemon-info');
 
+		let pokemonTypes = $('<p>Types: ' + pokemon.types.map(item => item.type.name).join(', ') + '</p>');
+		pokemonTypes.addClass('pokemon-info');
+
 		let pokemonImage = $('<img>');
 		pokemonImage.attr('src', pokemon.imageUrl);
 		pokemonImage.attr('alt', 'Image of Selected Pokemon');
@@ -109,6 +111,7 @@ let pokemonRepository = (function () {
 		modalTitle.append(name);
 		modalBody.append(pokemonHeight);
 		modalBody.append(pokemonWeight);
+		modalBody.append(pokemonTypes);
 		modalBody.append(pokemonImage);
 	}
 
