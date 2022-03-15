@@ -12,8 +12,7 @@ ul{
 }
 
 li{
-	margin: 15px 100px;
-	padding: 0 100px;
+	margin: 15px 0;
 }
 
 h1, h2{
@@ -44,6 +43,7 @@ p{text-align: center;}
 	background-color: #B5CDD2;
 	color: #111111;
 	text-decoration: none;
+	width: 200px;
 	padding: 15px;
 	transition: 0.5s opacity;
 }
@@ -54,3 +54,5 @@ p{text-align: center;}
 	cursor: pointer;
 	opacity: 0.5;
 }
+
+.modal-content{background-color: #CEEDF2;}
