@@ -1,82 +1,83 @@
 <!doctype html>
 <html>
-<head>
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1">
 
-	<link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
+		<link rel="icon" type="image/png" href="img/favicon.png" sizes="32x32" />
 
-	<!-- Bootstrap CSS-->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<!-- Bootstrap CSS-->
+		<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-	<!--Normalize CSS-->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+		<!--Normalize CSS-->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-	<!--Google Font-->
-	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-	<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
+		<!--Google Font-->
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
 
-	<!--Custom CSS-->
-	<link rel="stylesheet" type="text/css" href="dist/styles.min.css">
+		<!--Custom CSS-->
+		<link rel="stylesheet" type="text/css" href="dist/styles.min.css">
+		<!--<link rel="stylesheet" type="text/css" href="css/styles.css">-->
 
-	<title>Pokedex</title>
-</head>
+		<title>Pokedex</title>
+	</head>
 
-<body>
-	<!--Navigation Bar-->
-	<nav class="navbar navbar-expand-lg navbar-light">
-		<img src="img/pokeball.png" alt="Pokeball" class="pokeball">
-  		<h1 class="pokedex">Pokedex</h1>
+	<body>
+		<!--Navigation Bar-->
+		<nav class="navbar navbar-expand-lg navbar-light">
+			<img src="img/pokeball.png" alt="Pokeball" class="pokeball">
+			<h1 class="pokedex">Pokedex</h1>
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    		<span class="navbar-toggler-icon"></span>
- 		</button>
-	</nav>
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+		</nav>
 
-	<!--Pokemon List-->
-	<ul class="list-group"></ul>
+		<!--Pokemon List-->
+		<ul class="list-group poke-list"></ul>
 
-	<!--Modal-->
-	<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  		<span class="sr-only-focusable">
-			<div class="modal-dialog" role="document">
-    			<div class="modal-content">
-      				<div class="modal-header">
-        				<h2 class="modal-title" id="exampleModalLabel"></h2>
+		<!--Modal-->
+		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+			<span class="sr-only-focusable">
+				<div class="modal-dialog" role="document">
+					<div class="modal-content">
+						<div class="modal-header">
+							<h2 class="modal-title" id="exampleModalLabel"></h2>
 
-						<button type="button" class="close" data-dismiss="modal" aria-label="Close">
-							<span aria-hidden="true">&times;</span>
-						</button>
-					</div>
+							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
+								<span aria-hidden="true">&times;</span>
+							</button>
+						</div>
 
-					<div class="modal-body"></div>
+						<div class="modal-body"></div>
 
-					<div class="modal-footer">
-						<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						<div class="modal-footer">
+							<button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+						</div>
 					</div>
 				</div>
-			</div>
-		</span>
-	</div>
+			</span>
+		</div>
 
-	<!--jQuery-->
-	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<!--jQuery-->
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 
-	<!--Popper-->
-	<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<!--Popper-->
+		<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 
-	<!--Bootstrap-->
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<!--Bootstrap-->
+		<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
-	<!--Promise Polyfill-->
-	<script src="js/promise-polyfill.js"></script>
+		<!--Promise Polyfill-->
+		<script src="js/promise-polyfill.js"></script>
 
-	<!--Fetch Polyfill-->
-	<script src="js/fetch-polyfill.js"></script>
+		<!--Fetch Polyfill-->
+		<script src="js/fetch-polyfill.js"></script>
 
-	<!--Custom JavaScript-->
-	<script src="dist/scripts.min.js"></script>
-
-</body>
+		<!--Custom JavaScript-->
+		<script src="dist/scripts.min.js"></script>
+		<!--<script src="js/scripts.js"></script>-->
+	</body>
 </html>
