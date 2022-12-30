@@ -103,16 +103,20 @@ let pokemonRepository = (function () {
 		let pokemonTypes = $('<p>Types: ' + pokemon.types.map(item => item.type.name).join(', ') + '</p>');
 		pokemonTypes.addClass('pokemon-info');
 
+		let pokemonAbility = $('<p>Abilities: ' + pokemon.ability.map(item => item.ability.name).join(', ') + '</p>');
+		pokemonAbility.addClass('pokemon-info');
+
 		let pokemonImage = $('<img>');
 		pokemonImage.attr('src', pokemon.imageUrl);
-		pokemonImage.attr('alt', 'Image of Selected Pokemon');
+		pokemonImage.attr('alt', 'Image of ' + name);
 		pokemonImage.addClass('pokemon-image');
 
 		modalTitle.append(name);
 		modalBody.append(pokemonHeight);
 		modalBody.append(pokemonWeight);
 		modalBody.append(pokemonTypes);
-		modalBody.append(pokemonImage);
+		modalBody.append(pokemonAbility);
+		modalBody.append(pokemonImage);	
 	}
 
 	return {
