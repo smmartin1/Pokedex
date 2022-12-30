@@ -15,6 +15,44 @@ li{
 	margin: 15px 0;
 }
 
+ul.poke-list{
+	grid-template-columns: 200px 200px 200px 200px 200px;
+	display: grid;
+	padding: 0;
+	justify-content: center;
+	align-items: center;
+	-webkit-box-pack: center;
+	-ms-flex-pack: center;
+	justify-content: center;
+	-webkit-box-align: center;
+	-ms-flex-align: center;
+	align-items: center;
+}
+
+@media (max-width: 1000px) {
+	ul.poke-list {
+	  grid-template-columns: 200px 200px 200px 200px;
+	}
+}
+
+@media (max-width: 800px) {
+	ul.poke-list {
+	  grid-template-columns: 200px 200px 200px;
+	}
+}
+
+@media (max-width: 720px) {
+	ul.poke-list {
+	  grid-template-columns: 300px 300px;
+	}
+}
+
+@media (max-width: 600px) {
+	ul.poke-list {
+	  grid-template-columns: 300px;
+	}
+}
+
 h1, h2{
 	text-decoration: underline;
 	text-align: center;
@@ -43,7 +81,7 @@ p{text-align: center;}
 	background-color: #B5CDD2;
 	color: #111111;
 	text-decoration: none;
-	width: 200px;
+	width: 150px;
 	padding: 15px;
 	transition: 0.5s opacity;
 }
