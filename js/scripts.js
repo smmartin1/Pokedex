@@ -86,6 +86,11 @@ let pokemonRepository = (function () {
 	}
 
 	function showModal(pokemon) {
+		let heightInch = pokemon.height * 4;	//pokemon height in inches
+		let heightCM = heightInch * 2.54;		//pokemon height in cm
+		let weightLBS = pokemon.weight * 0.22;	//pokemon weight in pounds
+		let weightKG = weightLBS / 2.205;		//pokemon weight in kilos
+
 		let modalTitle = $('.modal-title');
 		let modalBody = $('.modal-body');
 
@@ -94,10 +99,10 @@ let pokemonRepository = (function () {
 
 		let name = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
 
-		let pokemonHeight = $('<p>Height: ' + pokemon.height + '</p>');
+		let pokemonHeight = $('<p>Height: ' + heightInch + ' inches, ' + heightCM + 'cm</p>');
 		pokemonHeight.addClass('pokemon-info');
 
-		let pokemonWeight = $('<p>Weight: ' + pokemon.weight + '</p>');
+		let pokemonWeight = $('<p>Weight: ' + weightLBS.toFixed(2) + 'lbs, ' + weightKG.toFixed(2) + 'kg</p>');
 		pokemonWeight.addClass('pokemon-info');
 
 		let pokemonTypes = $('<p>Types: ' + pokemon.types.map(item => item.type.name).join(', ') + '</p>');
@@ -112,11 +117,12 @@ let pokemonRepository = (function () {
 		pokemonImage.addClass('pokemon-image');
 
 		modalTitle.append(name);
+		modalBody.append(pokemonImage);
 		modalBody.append(pokemonHeight);
 		modalBody.append(pokemonWeight);
 		modalBody.append(pokemonTypes);
 		modalBody.append(pokemonAbility);
-		modalBody.append(pokemonImage);	
+		
 	}
 
 	return {
