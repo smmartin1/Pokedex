@@ -58,20 +58,17 @@ h1, h2{
 	text-align: center;
 }
 
-p{text-align: center;}
-
 .navbar{background-color: #CEEDF2;}
 
 .pokedex{margin: 0 20px}
 
 .pokeball{width: 50px;}
 
-.pokemon-info{font-size: 24px;}
+.pokemon-info{font-size: 20px;}
 
 .pokemon-image{
 	height: 200px;
-	display: block;
-	margin: auto;
+	float: left;
 }
 
 .btn{
