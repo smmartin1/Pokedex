@@ -2,7 +2,7 @@
 /* CSS Document */
 
 body {
-	background-color: #E9F5F7;
+	background-color: #DFF4F7;
 	font-family: 'Arimo', sans-serif;
 }
 
@@ -58,7 +58,9 @@ h1, h2{
 	text-align: center;
 }
 
-.navbar{background-color: #CEEDF2;}
+.title{margin: 10px 0;}
+
+.navbar{background-color: #C3D9E8;}
 
 .pokedex{margin: 0 20px}
 
@@ -74,7 +76,7 @@ h1, h2{
 .btn{
 	border: none;
 	font-family: inherit;
-	font-size: 20px;
+	font-size: 18px;
 	background-color: #B5CDD2;
 	color: #111111;
 	text-decoration: none;
@@ -90,4 +92,38 @@ h1, h2{
 	opacity: 0.5;
 }
 
-.modal-content{background-color: #CEEDF2;}
+.form-search{
+	display: block;
+	text-align: center;
+	margin: 15px 0;
+}
+
+.search-bar{
+	border-width: 1px;
+	border-color: #545F7D;
+	border-radius: 5%;
+	background-color: #F5F7FC;
+	font-family: inherit;
+	font-size: 14px;
+	text-align: center;
+	width: 250px;
+	padding: 8px;
+}
+
+.btn-search{
+	border: none;
+	border-radius: 5%;
+	font-family: inherit;
+	font-size: 14px;
+	background-color: #B5CDD2;
+	color: #111111;
+	text-decoration: none;
+	width: 100px;
+	padding: 10px;
+	transition: 0.5s opacity;
+}
+
+.modal-content{
+	background-color: #CEEDF2;
+	width: 550px;
+}
