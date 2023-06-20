@@ -3,7 +3,16 @@
 //Pokedex
 let pokemonRepository = (function () {
 	let pokemonList = [];
-	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=150';
+	let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=1010';
+
+	let searchButton = $(".btn-search");
+    searchButton.on("click", function() {
+        let uPokemonList = $(".poke-list");
+        uPokemonList.empty();
+        getByName($(".search-bar").val()).forEach(function(pokemon) {
+            addListItem(pokemon);
+        });
+    })
 
 	function getAll() {
 		return pokemonList;
@@ -57,13 +66,19 @@ let pokemonRepository = (function () {
 		}
 	}
 
+	function getByName(search) {
+		return pokemonList.filter(function(pokemon) {
+            return pokemon.name.toLowerCase().includes(search.toLowerCase());
+        });
+	}
+
 	function addListItem(pokemon){
 		let pokemonList = $('.list-group');
 		let listItem = $('<li></li>');
 		listItem.addClass('group-list-item');
 
 		let button = $('<button>' + pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1) + '</button>');
-		button.attr('data-target', '#exampleModal');
+		button.attr('data-target', '#pokemonModal');
 		button.attr('data-toggle', 'modal');
 		button.addClass('btn btn-primary');
 

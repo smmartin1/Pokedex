@@ -21,8 +21,8 @@
 		<link href="https://fonts.googleapis.com/css2?family=Arimo&display=swap" rel="stylesheet">
 
 		<!--Custom CSS-->
-		<link rel="stylesheet" type="text/css" href="dist/styles.min.css">
-		<!--<link rel="stylesheet" type="text/css" href="css/styles.css">-->
+		<!--<link rel="stylesheet" type="text/css" href="dist/styles.min.css">-->
+		<link rel="stylesheet" type="text/css" href="css/styles.css">
 
 		<title>Pokedex</title>
 	</head>
@@ -38,16 +38,25 @@
 			</button>
 		</nav>
 
+		<h2 class="title">Pokemon</h2>
+
+		<div class="form-search">
+			<form class="search-form">
+				<input class="search-bar mr-sm-2" type="search" placeholder="Search a Pokemon" aria-label="Search">
+				<button class="btn-search" type="button">Search</button>
+			</form>
+		</div>
+		
 		<!--Pokemon List-->
 		<ul class="list-group poke-list"></ul>
 
 		<!--Modal-->
-		<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+		<div class="modal fade" id="pokemonModal" tabindex="-1" role="dialog" aria-labelledby="pokemonName" aria-hidden="true">
 			<span class="sr-only-focusable">
 				<div class="modal-dialog" role="document">
 					<div class="modal-content">
 						<div class="modal-header">
-							<h2 class="modal-title" id="exampleModalLabel"></h2>
+							<h2 class="modal-title" id="pokemonName"></h2>
 
 							<button type="button" class="close" data-dismiss="modal" aria-label="Close">
 								<span aria-hidden="true">&times;</span>
@@ -80,7 +89,7 @@
 		<script src="js/fetch-polyfill.js"></script>
 
 		<!--Custom JavaScript-->
-		<script src="dist/scripts.min.js"></script>
-		<!--<script src="js/scripts.js"></script>-->
+		<!--<script src="dist/scripts.min.js"></script>-->
+		<script src="js/scripts.js"></script>
 	</body>
 </html>
