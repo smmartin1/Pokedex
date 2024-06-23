@@ -1,8 +1,11 @@
-# simple-js-app
-A database app that will allow users to get detailed information on the item list
+# pokedex
+"A small web application with HTML, CSS, and JavaScript that loads data from an external API and enables the viewing of data points in detail." -CareerFoundry Full Stack Development Course Achievement Project 1 Objective
 
-This project mainly uses JavaScript to create a Pokedex to display the first 150 Pokemon in the series of games along with HTML to be the foundation of the app and CSS to create the look of it.
+Languages used:
+    -JavaScript/jQuery
+    -HTML
+    -CSS
 
-The project dependencies include two Polyfills (Promise and Fetch), a Popper, Bootstrap, jQuery, and the ESLint linter.
+A Pokedex that displays the first 150 Pokemon in the series of games.
 
 API used: https://pokeapi.co/api/v2/pokemon/?limit=150
